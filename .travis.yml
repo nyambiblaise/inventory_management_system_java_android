@@ -1,0 +1,8 @@
+
+language: java
+jdk: openjdk8
+services: mysql
+before_install:
+  - sudo mysql -e "CREATE DATABASE inventory1;"
+  - echo "UPDATE mysql.user SET authentication_string=PASSWORD('mysql') WHERE user='root';\nFLUSH
+    PRIVILEGES;" | mysql -u root
